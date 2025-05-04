@@ -1,0 +1,72 @@
+.contactMainWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 50px 20px;
+
+    .contactHeader {
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .contactTitle {
+font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+
+
+        }
+
+
+        .contactDesc {
+
+            font-weight: 400;
+            font-style: normal;
+            text-transform: none;
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .formWrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .inputForm,  .textAreaForm {
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 2px solid black;
+            box-sizing: border-box;
+
+        }
+        .textAreaForm {
+            min-height: 200px;
+        }
+
+        .formButton {
+            box-sizing: border-box;
+            background-color: transparent;
+                padding: 20px 20px;
+                border-radius: 30px;
+                border: black 2px solid;
+                color: black;
+                width: fit-content;
+                margin: 0 auto;
+                font-size: 18px;
+            
+            }
+            .formButton:hover {
+                background-color: black;
+                color: white;
+            }
+    }
+}

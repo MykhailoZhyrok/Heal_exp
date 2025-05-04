@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  border: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+button {
+  margin: 0;
+  font-family: 'WorkSans';
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'WorkSans';
+
+
+}
+
+@font-face {
+  font-family: 'WorkSans', sans-serif;
+  src: url('../public/WorkSans-VariableFont_wght.ttf');
+}

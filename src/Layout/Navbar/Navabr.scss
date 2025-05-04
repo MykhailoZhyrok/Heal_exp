@@ -1,0 +1,82 @@
+.navbarMainWrap {
+
+    display: flex;
+    flex-direction: column;
+
+    .logoNavbarLink {
+        max-width: 1220px;
+        margin: 0 auto;
+        display: flex;
+        width: 100%;
+        padding: 0 20px;
+        align-items: center;
+        justify-content: flex-start;
+        .navbarLogo {
+            width: 200px;
+            min-width: 100px;
+        
+        }
+    }
+
+    
+
+    .navbarBack {
+
+        background-color: black;
+
+        .navbarWrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 1220px;
+    margin: 0 auto;
+    padding: 12px 20px;
+        
+        
+       
+        
+            .navbarLink {
+        
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        max-width: calc(33.3333333333% - 20px);
+    height: auto;
+    object-fit: cover;
+    flex: 1 1 calc(33.3333333333% - 20px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+                
+                
+            }
+            .navbarLink.left {
+                justify-content: flex-start;
+            }
+            .navbarLink.right {
+                justify-content: flex-end;
+            }
+
+
+            @media(max-width: 991px){
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+                justify-content: center;
+                .navbarLink {
+                    font-size: 18px;
+                    text-align: center;
+                    line-height: 1;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+
+}
+

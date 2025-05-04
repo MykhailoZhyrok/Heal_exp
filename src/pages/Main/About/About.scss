@@ -1,0 +1,40 @@
+.aboutWrap {
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 20px 100px 20px;
+    margin: 0 auto;
+    max-width: 1220px;
+    .aboutTitle {
+        font-weight: 400;
+        font-style: normal;
+        text-transform: none;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 40px;
+       
+    }  
+    
+    @media(max-width: 991px){
+        .aboutTitle {
+            font-size: 24px;
+        }
+    }
+
+    .aboutDescWrap {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+
+        .aboutDesc {
+
+font-weight: 400;
+        font-style: normal;
+        text-transform: none;
+        font-size: 18px;
+        line-height: 24px;
+        }
+    }
+}
