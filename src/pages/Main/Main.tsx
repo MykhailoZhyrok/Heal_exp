@@ -1,5 +1,4 @@
 import './Main.scss'
-import { Navbar } from '../../Layout/Navbar/Navbar'
 import { Link } from 'react-router'
 import { About } from './About/About'
 

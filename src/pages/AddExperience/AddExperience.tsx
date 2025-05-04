@@ -11,6 +11,7 @@ const AddExperience = () => {
     e.preventDefault()
     if (!email || !subject || !message) {
       setError('Будь ласка, заповніть всі поля.')
+      console.log(error)
       return
     }
 
@@ -43,7 +44,7 @@ const AddExperience = () => {
         <textarea name="contactMsg" id="contactMsg" placeholder="Опишіть свою ситуацію" className="textAreaForm"></textarea>
 
 
-        <button className="formButton">Надіслати</button>
+        <button onClick={handleSubmit} className="formButton">Надіслати</button>
     </div>
 </div>
   )
