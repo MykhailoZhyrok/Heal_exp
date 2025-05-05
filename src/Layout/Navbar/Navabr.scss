@@ -11,6 +11,11 @@
         padding: 0 20px;
         align-items: center;
         justify-content: flex-start;
+
+
+        @media(max-width: 991px){
+            box-sizing: border-box;
+        }
         .navbarLogo {
             width: 200px;
             min-width: 100px;
