@@ -18,7 +18,7 @@ export const Navbar = () => {
         <Link className='navbarLink' to="/experience">
         Досвід людей
         </Link>
-        <Link className='navbarLink right' to="/add-your-exp">
+        <Link className='navbarLink right' to="/our-blanks">
         Список заяв
         </Link>
     </div>
