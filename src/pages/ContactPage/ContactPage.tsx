@@ -3,8 +3,8 @@ import emailjs from "emailjs-com";
 import { useState, useEffect} from "react";
 
 
-const emailjs_id = process.env.REACT_APP_EMAIL_ID||'err';
-const user_id = process.env.REACT_APP_USER_ID||'err';
+const emailjs_id = process.env.REACT_APP_EMAIL_ID;
+const user_id = process.env.REACT_APP_USER_ID;
 
 interface FormData {
   email: string;
@@ -65,7 +65,10 @@ export const ContactPage = () => {
 
     setIsSubmitting(true); 
     localStorage.setItem("lastSubmitTime", currentTime.toString()); 
-
+    if (!emailjs_id || !user_id) {
+      alert("Не вдалося отримати значення змінних середовища для EmailJS!");
+      return;
+    }
     emailjs
       .sendForm(
         emailjs_id,
