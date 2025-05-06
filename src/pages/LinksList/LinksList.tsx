@@ -70,6 +70,7 @@ export const LinksList = () => {
       </ul>
 
 
+
       <div className="linksList__source">
         <p>
           Усі посилання зібрані на основі відкритих державних та офіційних ресурсів.  
@@ -79,6 +80,7 @@ export const LinksList = () => {
 
         <Link to='/contact' className='contactButton'> Пропозиції та побажання </Link>
       </div>
+
     </div>
   )
 }

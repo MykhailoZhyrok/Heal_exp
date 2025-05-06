@@ -7,6 +7,7 @@ import { LinksList } from './pages/LinksList/LinksList';
 import { ContactPage } from './pages/ContactPage/ContactPage';
 import ExpPage from './pages/ExpPafe/ExpPage';
 import AddExperience from './pages/AddExperience/AddExperience';
+import DocumentsSection from './pages/DocumentsSection/DocumentsSection';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Main/>} />
       <Route path="/our-links" element={<LinksList/>} />
+      <Route path="/our-blanks" element={<DocumentsSection/>} />
       <Route path="/contact" element={<ContactPage/>} />
       <Route path="/experience" element={<ExpPage/>} />
       <Route path="/add-your-exp" element={<AddExperience/>} />

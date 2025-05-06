@@ -19,7 +19,7 @@ export const Navbar = () => {
         Досвід людей
         </Link>
         <Link className='navbarLink right' to="/add-your-exp">
-        Поділитись досвідом
+        Список заяв
         </Link>
     </div>
     </div>
