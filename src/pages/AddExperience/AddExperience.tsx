@@ -1,26 +1,96 @@
 import './AddExperience.scss'
-import { useState } from 'react'
+import emailjs from "emailjs-com";
+import { useState, useEffect} from "react";
+
+const emailjs_id = process.env.REACT_APP_EMAIL_ID||'err';
+const user_id = process.env.REACT_APP_USER_ID||'err';
+
+interface FormData {
+  email: string;
+  subject: string;
+  message: string;
+}
 
 const AddExperience = () => {
-  const [email, setEmail] = useState('')
-  const [subject, setSubject] = useState('')
-  const [message, setMessage] = useState('')
-  const [error, setError] = useState('')
+  const [formData, setFormData] = useState<FormData>({
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-  const handleSubmit = (e:any) => {
-    e.preventDefault()
-    if (!email || !subject || !message) {
-      setError('Будь ласка, заповніть всі поля.')
-      console.log(error)
-      return
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);  
+  const [lastSubmitTime, setLastSubmitTime] = useState<number | null>(null); 
+
+  useEffect(() => {
+    const savedTime = localStorage.getItem("lastSubmitTime");
+    if (savedTime) {
+      setLastSubmitTime(parseInt(savedTime));
+    }
+  }, []);
+
+  const isEmailValid = (email: string): boolean => {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return emailPattern.test(email);
+  };
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+ 
+    if (!formData.email || !formData.subject || !formData.message) {
+      alert("Будь ласка, заповніть всі поля.");
+      return;
     }
 
-    console.log('Form submitted', { email, subject, message })
+    if (!isEmailValid(formData.email)) {
+      alert("Будь ласка, введіть правильну електронну пошту.");
+      return;
+    }
 
-    setEmail('')
-    setSubject('')
-    setMessage('')
-    setError('')
+    const currentTime = Date.now();
+    if (isSubmitting || (lastSubmitTime && currentTime - lastSubmitTime < 15000)) {
+      alert("Будь ласка, почекайте 15 секунд перед відправкою нового запиту.");
+      return;
+    }
+
+    setIsSubmitting(true); 
+    localStorage.setItem("lastSubmitTime", currentTime.toString()); 
+
+    emailjs
+      .sendForm(
+        emailjs_id,
+        "template_yd4rdra",
+        e.target,
+        user_id
+      )
+      .then(
+        (result) => {
+          console.log("Success:", result.text);
+          alert("Ваше повідомлення успішно надіслано!");
+        },
+        (error) => {
+          console.log("Error:", error.text);
+          alert("Сталася помилка при відправці повідомлення.");
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false); 
+      });
+
+    setFormData({
+      email: "",
+      subject: "",
+      message: "",
+    });
   }
 
   return (
@@ -38,14 +108,36 @@ const AddExperience = () => {
 
     </div>
 
-    <div className="formWrap">
-        <input type="email" placeholder="E-mail" className="inputForm"/>
-        <input type="text" placeholder="Тема" className="inputForm"/>
-        <textarea name="contactMsg" id="contactMsg" placeholder="Опишіть свою ситуацію" className="textAreaForm"></textarea>
+    <form className="formWrap" onSubmit={handleSubmit}>
+        <input type="email" placeholder="E-mail"
+            name="email"
+         
+            className="inputForm"
+            value={formData.email}
+            onChange={handleChange}
+            required/>
+        <input type="text" placeholder="Тема"
+            name="subject"
+     
+            className="inputForm"
+            value={formData.subject}
+            onChange={handleChange}
+            required/>
+        <textarea placeholder="Опишіть свою ситуацію" className="textAreaForm"
+        name="message"
+        id="contactMsg"
+        
+
+        value={formData.message}
+        onChange={handleChange}
+        required
+        ></textarea>
 
 
-        <button onClick={handleSubmit} className="formButton">Надіслати</button>
-    </div>
+        <button type="submit" className="formButton" disabled={isSubmitting}>
+            {isSubmitting ? "Зачекайте..." : "Надіслати"}
+          </button>
+    </form>
 </div>
   )
 
