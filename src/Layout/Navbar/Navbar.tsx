@@ -14,7 +14,7 @@ export const Navbar = () => {
     <div className='navbarWrap'>
   
        
-        <Link className='navbarLink left' to="/">
+        <Link className='navbarLink ' to="/">
           Головна
         </Link>
         <Link className='navbarLink' to="/our-links">
@@ -23,7 +23,7 @@ export const Navbar = () => {
         <Link className='navbarLink' to="/experience">
         Досвід людей
         </Link>
-        <Link className='navbarLink right' to="/our-blanks">
+        <Link className='navbarLink ' to="/our-blanks">
         Список заяв
         </Link>
     </div>
