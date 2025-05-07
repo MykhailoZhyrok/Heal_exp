@@ -18,14 +18,14 @@ export const Navbar = () => {
           Головна
         </Link>
       
-     
-        
-        <Link className='navbarLink ' to="/our-blanks">
-        Список заяв
-        </Link>
-        <Link className='navbarLink right' to="/our-links">
+        <Link className='navbarLink ' to="/our-links">
         Волонтерські організації 
         </Link>
+        <Link className='navbarLink right' to="/experience">
+        Досвід людей
+        </Link>
+        
+       
     </div>
     </div>
     </div>
