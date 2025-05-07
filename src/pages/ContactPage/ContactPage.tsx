@@ -40,8 +40,8 @@ export const ContactPage = () => {
       [name]: value,
     });
   };
-  const emailjs_id = process.env.ENV_MAIL;
-  const user_id = process.env.REACT_APP_USER_ID;
+  const emailjs_id = import.meta.env.VITE_ENV_MAIL;
+  const user_id = import.meta.env.VITE_ENV_USER_ID;
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
