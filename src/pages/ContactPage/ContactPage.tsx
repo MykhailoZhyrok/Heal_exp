@@ -3,8 +3,7 @@ import emailjs from "emailjs-com";
 import { useState, useEffect} from "react";
 
 
-const emailjs_id = process.env.REACT_APP_EMAIL_ID;
-const user_id = process.env.REACT_APP_USER_ID;
+
 
 interface FormData {
   email: string;
@@ -41,7 +40,8 @@ export const ContactPage = () => {
       [name]: value,
     });
   };
-
+  const emailjs_id = process.env.REACT_APP_EMAIL_ID;
+  const user_id = process.env.REACT_APP_USER_ID;
 
   const handleSubmit = (e: any) => {
     e.preventDefault();

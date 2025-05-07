@@ -1,9 +1,8 @@
 import './AddExperience.scss'
 import emailjs from "emailjs-com";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
-const emailjs_id = process.env.REACT_APP_EMAIL_ID;
-const user_id = process.env.REACT_APP_USER_ID;
+
 
 interface FormData {
   email: string;
@@ -12,14 +11,16 @@ interface FormData {
 }
 
 const AddExperience = () => {
+
+
   const [formData, setFormData] = useState<FormData>({
     email: "",
     subject: "",
     message: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);  
-  const [lastSubmitTime, setLastSubmitTime] = useState<number | null>(null); 
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [lastSubmitTime, setLastSubmitTime] = useState<number | null>(null);
 
   useEffect(() => {
     const savedTime = localStorage.getItem("lastSubmitTime");
@@ -40,12 +41,13 @@ const AddExperience = () => {
       [name]: value,
     });
   };
-
+  const emailjs_id = process.env.REACT_APP_EMAIL_ID;
+  const user_id = process.env.REACT_APP_USER_ID;
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log(emailjs_id, user_id)
- 
+
     if (!formData.email || !formData.subject || !formData.message) {
       alert("Будь ласка, заповніть всі поля.");
       return;
@@ -62,8 +64,8 @@ const AddExperience = () => {
       return;
     }
 
-    setIsSubmitting(true); 
-    localStorage.setItem("lastSubmitTime", currentTime.toString()); 
+    setIsSubmitting(true);
+    localStorage.setItem("lastSubmitTime", currentTime.toString());
     if (!emailjs_id || !user_id) {
       alert("Не вдалося отримати значення змінних середовища для EmailJS!");
       return;
@@ -86,7 +88,7 @@ const AddExperience = () => {
         }
       )
       .finally(() => {
-        setIsSubmitting(false); 
+        setIsSubmitting(false);
       });
 
     setFormData({
@@ -98,50 +100,50 @@ const AddExperience = () => {
 
   return (
     <div className='contactMainWrap'>
-    <div className="contactHeader">
+      <div className="contactHeader">
         <h2 className="contactTitle">
-        Поділіться своїм досвідом
+          Поділіться своїм досвідом
         </h2>
 
         <p className="contactDesc">
-        Якщо ви знайшли інформацію про зниклих безвісти, будь ласка, поділіться нею.
+          Якщо ви знайшли інформацію про зниклих безвісти, будь ласка, поділіться нею.
 
         </p>
 
 
-    </div>
+      </div>
 
-    <form className="formWrap" onSubmit={handleSubmit}>
+      <form className="formWrap" onSubmit={handleSubmit}>
         <input type="email" placeholder="E-mail"
-            name="email"
-         
-            className="inputForm"
-            value={formData.email}
-            onChange={handleChange}
-            required/>
-        <input type="text" placeholder="Тема"
-            name="subject"
-     
-            className="inputForm"
-            value={formData.subject}
-            onChange={handleChange}
-            required/>
-        <textarea placeholder="Опишіть свою ситуацію" className="textAreaForm"
-        name="message"
-        id="contactMsg"
-        
+          name="email"
 
-        value={formData.message}
-        onChange={handleChange}
-        required
+          className="inputForm"
+          value={formData.email}
+          onChange={handleChange}
+          required />
+        <input type="text" placeholder="Тема"
+          name="subject"
+
+          className="inputForm"
+          value={formData.subject}
+          onChange={handleChange}
+          required />
+        <textarea placeholder="Опишіть свою ситуацію" className="textAreaForm"
+          name="message"
+          id="contactMsg"
+
+
+          value={formData.message}
+          onChange={handleChange}
+          required
         ></textarea>
 
 
         <button type="submit" className="formButton" disabled={isSubmitting}>
-            {isSubmitting ? "Зачекайте..." : "Надіслати"}
-          </button>
-    </form>
-</div>
+          {isSubmitting ? "Зачекайте..." : "Надіслати"}
+        </button>
+      </form>
+    </div>
   )
 
 }
