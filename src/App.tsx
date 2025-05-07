@@ -11,8 +11,7 @@ import DocumentsSection from './pages/DocumentsSection/DocumentsSection';
 
 function App() {
 
-  console.log(import.meta.env.VITE_ENV_MAIL)
-  console.log(import.meta.env.VITE_ENV_USER_ID)
+
   return (
     <>
     <BrowserRouter>

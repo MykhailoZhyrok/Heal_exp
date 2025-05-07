@@ -46,7 +46,7 @@ const AddExperience = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(emailjs_id, user_id)
+     
 
     if (!formData.email || !formData.subject || !formData.message) {
       alert("Будь ласка, заповніть всі поля.");
