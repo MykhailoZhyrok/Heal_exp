@@ -13,7 +13,7 @@ export const Navbar = () => {
 
     <div className='navbarWrap'>
     <Link className='navbarLink right' to="/">
-        Главная
+          Головна
         </Link>
         <Link className='navbarLink left' to="/our-links">
         Волонтерські організації 
