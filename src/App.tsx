@@ -11,7 +11,7 @@ import DocumentsSection from './pages/DocumentsSection/DocumentsSection';
 
 function App() {
 
-
+  console.log(process.env.REACT_APP_EMAIL_ID)
   return (
     <>
     <BrowserRouter>
