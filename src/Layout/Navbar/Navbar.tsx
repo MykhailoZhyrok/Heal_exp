@@ -12,10 +12,10 @@ export const Navbar = () => {
 
 
     <div className='navbarWrap'>
-    <Link className='navbarLink right' to="/">
+    <Link className='navbarLink left' to="/">
           Головна
         </Link>
-        <Link className='navbarLink left' to="/our-links">
+        <Link className='navbarLink' to="/our-links">
         Волонтерські організації 
         </Link>
         <Link className='navbarLink' to="/experience">
