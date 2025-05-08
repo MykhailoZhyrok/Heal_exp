@@ -35,22 +35,23 @@ function App() {
 
   return (
     <>
-    <ScrollToTop />
-    <BrowserRouter>
-
-    <Layout>
+      <BrowserRouter>
+        <ScrollToTop />
 
 
-    <Routes>
-      <Route path="/" element={<Main/>} />
-      <Route path="/our-links" element={<LinksList/>} />
-      <Route path="/our-blanks" element={<DocumentsSection/>} />
-      <Route path="/contact" element={<ContactPage/>} />
-      <Route path="/experience" element={<ExpPage/>} />
-      <Route path="/add-your-exp" element={<AddExperience/>} />
-    </Routes>
-    </Layout>
-  </BrowserRouter>
+        <Layout>
+
+
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/our-links" element={<LinksList />} />
+            <Route path="/our-blanks" element={<DocumentsSection />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/experience" element={<ExpPage />} />
+            <Route path="/add-your-exp" element={<AddExperience />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
     </>
   )
 }
