@@ -14,7 +14,7 @@ export const Main = () => {
         </h1>
 
         <p className="mainBannerDesc">
-          Ми надаємо посилання на офіційні служби та волонтерські організації, що допомагають у пошуку людей.
+          Ми надаємо посилання на офіційні служби та  Корисні посилання, що допомагають у пошуку людей.
         </p>
       </div>
 
@@ -26,7 +26,7 @@ export const Main = () => {
           Пам'ятка
         </a>
         <Link to="/our-links" className='mainPageButton'>
-          Волонтерські організації
+           Корисні посилання
         </Link>
         <Link to="/our-blanks" className='mainPageButton'>
           Cписок заяв

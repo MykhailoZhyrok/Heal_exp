@@ -19,7 +19,7 @@ export const Navbar = () => {
         </Link>
       
         <Link className='navbarLink ' to="/our-links">
-        Волонтерські організації 
+         Корисні посилання 
         </Link>
         <Link className='navbarLink right' to="/experience">
         Досвід людей
