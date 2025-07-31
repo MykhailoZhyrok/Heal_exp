@@ -20,21 +20,21 @@ jobs:
 
       - name: build project
         run: npm run build
-#
-#      - name: Run linter
-#        run: npm run lint
-#
-#      - name: Run type check
-#        run: npm run type:check
-#
-#      - name: Run i18n check
-#        run: npm run i18n:check
-#
-#      - name: Run unit tests
-#        run: npm run test:unit
-#
-#      - name: Run e2e test
-#        run: npm run test:e2e
-#
-#      - name: Run build storybook
-#        run: npm run build:storybook
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Run type check
+        run: npm run type:check
+
+      - name: Run i18n check
+        run: npm run i18n:check
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Run e2e test
+        run: npm run test:e2e
+
+      - name: Run build storybook
+        run: npm run build:storybook
