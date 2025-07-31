@@ -1,0 +1,1 @@
+console.log('typecheck test.js is running');

@@ -1,0 +1,1 @@
+console.log('i18n-check test.js is running');
